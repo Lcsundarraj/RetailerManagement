@@ -15,7 +15,7 @@ def connect_db():
 	# con = MongoClient('mongodb+srv://sundar:sundar@cluster0.dol3j.mongodb.net/retailerManagement_db?retryWrites=true&w=majority')
 	# db = con.retailerManagement_db
 	# col = db.retailer_info
-	con = MongoClient('mongodb+srv://test:test@cluster0.kw4id.mongodb.net/<dbname>?retryWrites=true&w=majority')
+	con = MongoClient('mongodb+srv://test:test@cluster0.kw4id.mongodb.net/retailerManagement_db?retryWrites=true&w=majority')
 	db = con.retailerManagement_db
 	col = db.retailer_info
 
