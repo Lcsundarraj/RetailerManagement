@@ -1,2 +1,2 @@
-# RetailerManagement
+# RetailerManagementApp
  
