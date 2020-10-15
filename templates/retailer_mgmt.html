@@ -214,18 +214,19 @@
             <div class="bg bg-lighta">
                   <div class="row">
                       <div class="sec_title">
-                            <h6 >View Fetched Data</h6>
+                            <h6 id="select_txt">View Fetched Data</h6><button type="button" class="btn btn-info" onclick="copy_data(select_txt)">copy</button>
                       </div>
                   </div>
             
 
                   <div class="row mt-3 pl-3 pr-3">
                   {% for p in rtlrList %}
-                     <div class="col-lg-4 mt-4">             
+                     <div class="col-lg-4 col-md-6 col-sm-12 mt-4">             
                           <div class="card">
                               <div class="card-body">
                               <h5 class="card-title bg bg-dark text-light p-1">Program Name : {{p["ProgramName"]}}</h5>
-                              <table class="mb-4">
+                              <button type="button" class="btn btn-info" onclick="copy_data(select_txt1)">copy</button>
+                              <table class="mb-4" id="select_txt1">
                                  <tr><td>Account # : </td><td>{{p["Account"]}}</td></tr>
                                  <tr><td class="pr-4">Address : </td><td>{{p["Address1"]}}</td></tr>
                                  <tr><td>City : </td><td>{{p["City"]}}</td></tr>

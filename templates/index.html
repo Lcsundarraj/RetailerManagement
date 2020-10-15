@@ -14,7 +14,7 @@
       <title>Retailer Management</title>
 
 </head>
-<body>
+<body >
       <div class="Container-fluid">
           
           <!-- Navbar Section -->
@@ -58,7 +58,18 @@
 
     </div>
 
-
+    <script type="text/javascript">
+      
+      function copy_data(containerid) {
+      var range = document.createRange();
+      range.selectNode(containerid); //changed here
+      window.getSelection().removeAllRanges(); 
+      window.getSelection().addRange(range); 
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();
+      alert("data copied");
+    }
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
