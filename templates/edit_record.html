@@ -3,7 +3,7 @@
 
 <!-- retailer management form block started -->
 {% block edit_retailer_mgmt %}
-    <section id="section1" class="container-fluid">
+    <section id="section1" class="container-fluid mt-8">
             <div class="bg bg-lighta">
                 <div class="sec_title">
                       <h6 >Retailer management</h6>
@@ -11,7 +11,7 @@
                {% for p in retailer_list %}
 	<form class="form-horizontal col-xs-12 col-lg-12 col-md-12 col-sm-12 mt3" method="POST" action="{{url_for('update_oneRetailer_Records')}}" name="wform" >
       <fieldset  class="row sec1">
-         <legend class="ml-3">DC Basic Information</legend>
+         <legend class="ml-3">Retailer Information</legend>
          <div class="form-group col-lg-4 col-sm-12">
             <label for="rid" class="text-light bg bg-info">ID</label>
             <input type="text" class="form-control mb-1" id="rid" placeholder="Enter Program Name" name="rid" value="{{p['_id']}}" >
@@ -32,19 +32,30 @@
             <label for="city" class="text-light bg bg-info">City </label>
             <input type="text" class="form-control mb-1" id="city" placeholder="Enter City" name="city" value="{{p['City']}}">
          </div>
+
+
          <div class="form-group col-4">
+                <!-- <label for="cntry" class="">Country </label> -->
+                <select name="country" id="country" class="custom-select mb-1"></select> 
+        </div>
+        <div class="form-group col-4">
+                <!-- <label for="cntry" class="">Country </label> -->
+                <select name="state" id="state" class="custom-select mb-1"></select> 
+        </div>
+
+         <!-- <div class="form-group col-4">
             <label for="state" class="text-light bg bg-info">State </label>
             <input type="text" class="form-control mb-1" id="state" placeholder="Enter  State"  name="state" value="{{p['State']}}">
-         </div>
+         </div> -->
 
          <div class="form-group col-lg-4 col-sm-12">
             <label for="zCode" class="text-light bg bg-info">Zip Code</label>
             <input type="Number" class="form-control mb-1" id="zCode" placeholder="Enter Zip Code" name="zCode" value="{{p['Zip']}}">
          </div>
-         <div class="form-group col-4">
+         <!-- <div class="form-group col-4">
             <label for="cntry" class="text-light bg bg-info">Country </label>
             <input type="text" class="form-control mb-1" id="cntry" placeholder="Enter Country" name="cntry" value="{{p['Country']}}">
-         </div>
+         </div> -->
          <div class="form-group col-lg-4 col-sm-12">
             <label for="strDate" class="text-light bg bg-info">Start Date</label>
             <input type="date" class="form-control mb-1" id="strDate" placeholder="Choose Start Date" name="strDate" value="{{p['Hire']}}" >
@@ -73,7 +84,7 @@
          </div>  
          <div class="form-group col-lg-4 col-sm-12">
             <label for="phone" class="text-light bg bg-info">Phone Number</label>
-            <input type="Number" class="form-control mb-1" id="phone" placeholder="Enter Phone Number" name="phone" value="{{p['Phone1']}}"> mb-1
+            <input type="Number" class="form-control mb-1" id="phone" placeholder="Enter Phone Number" name="phone" value="{{p['Phone1']}}">
          </div> 
          <div class="form-group col-lg-4 col-sm-12">
             <label for="ext" class="text-light bg bg-info">Ext #</label>
@@ -199,7 +210,7 @@
          </div> 
       </fieldset>
          
-         <div class="form-group col-4 float-right ">
+         <div class="form-group col-4 float-right m-4">
             <button type="Submit" class="btn btn-primary">Submit Info</button>
          </div>
    </form>

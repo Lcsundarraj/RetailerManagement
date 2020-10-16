@@ -32,7 +32,7 @@ def setData():
 	City = request.form['city']
 	State =  request.form['state']
 	Zip = request.form['zCode']
-	Country = request.form['cntry']
+	Country = request.form['country']
 	Hire = request.form['strDate']
 	Status = request.form['status']
 

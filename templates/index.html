@@ -6,7 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
       <!-- Master Stylesheet -->
-      <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+      <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+      <script src="{{url_for('static',filename='js/countries.js')}}" ></script>
       <!-- Bootstrap CSS -->  
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >      
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -58,17 +59,8 @@
 
     </div>
 
-    <script type="text/javascript">
-      
-      function copy_data(containerid) {
-      var range = document.createRange();
-      range.selectNode(containerid); //changed here
-      window.getSelection().removeAllRanges(); 
-      window.getSelection().addRange(range); 
-      document.execCommand("copy");
-      window.getSelection().removeAllRanges();
-      alert("data copied");
-    }
+    <script language="javascript">
+      populateCountries("country", "state");  // first parameter is id of country drop-down and second parameter is id of state drop-down
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
