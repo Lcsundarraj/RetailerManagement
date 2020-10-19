@@ -45,3 +45,13 @@ def update_one_record(retailerId, retailerRecords):
     connect_db()    
     col.update_one({"_id": ObjectId(retailerId)}, {'$set' :{'ProgramName':retailerRecords["ProgramName"], 'Account':retailerRecords["Account"], 'Address1':retailerRecords["Address1"], 'City':retailerRecords["City"],'Country':retailerRecords["Country"],  'State':retailerRecords["State"], 'Zip':retailerRecords["Zip"], 'Hire':retailerRecords["Hire"], 'Status':retailerRecords["Status"], 'Jobtitle':retailerRecords["Jobtitle"], 'FirstName':retailerRecords["FirstName"], 'LastName':retailerRecords["LastName"], 'Phone1':retailerRecords["Phone1"], 'PhoneExt':retailerRecords["PhoneExt"], 'Mobile1':retailerRecords["Mobile1"],     'Email1':retailerRecords["Email1"], 'Jobtitle2':retailerRecords["Jobtitle2"], 'FirstName2':retailerRecords["FirstName2"], 'LastName2':retailerRecords["LastName2"], 'Phone2':retailerRecords["Phone2"], 'Mobile2':retailerRecords["Mobile2"], 'Email2':retailerRecords["Email2"], 'Jobtitle3':retailerRecords["Jobtitle3"], 'FirstName3':retailerRecords["FirstName3"], 'LastName3':retailerRecords["LastName3"], 'Phone3':retailerRecords["Phone3"], 'Mobile3':retailerRecords["Mobile3"], 'Email3':retailerRecords["Email3"], 'Jobtitle4':retailerRecords["Jobtitle4"], 'FirstName4':retailerRecords["FirstName4"],  'LastName4':retailerRecords["LastName4"], 'Phone4':retailerRecords["Phone4"], 'Mobile4':retailerRecords["Mobile4"], 'Email4':retailerRecords["Email4"], 'ANtlAcctRepFirst':retailerRecords["ANtlAcctRepFirst"], 'ANtlAcctRepLast':retailerRecords["ANtlAcctRepLast"], 'ANtlAcctRepPhone':retailerRecords["ANtlAcctRepPhone"], 'ANtlAcctRepEmail':retailerRecords["ANtlAcctRepEmail"]} })
     return
+
+
+
+
+# search by id
+def search_installer_by_pName(prgrmName):
+   global col_installer
+   connect_db()
+   searched_doc = col.find({'ProgramName':str(prgrmName)})
+   return searched_doc

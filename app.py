@@ -148,5 +148,53 @@ def edit_record(retailer_id):
 	return render_template('edit_record.html', retailer_list = retailer_one_record)
 
 
+
+# Search by id
+installers = []
+search_results_activated_installer = False
+
+@app.route("/installer", methods=['GET'])
+def installerWrapper():
+   global installers
+   global search_results_activated_installer
+   installer_list = []
+   if search_results_activated_installer:
+       installer_list = installers
+   else:
+       cursor = retailMgmt_db.get_retailerInfo()
+       for doc in cursor:
+           installer_list.append(doc)
+   search_results_activated_installer = False
+   return render_template('retailer_mgmt.html', rtlrList = installer_list)
+
+@app.route('/installer/searchbyid', methods=['POST'])
+def searchInstallerById():
+   global installers
+   global search_results_activated_installer
+   installer_list = []
+   installer_id = request.form['searchbyid']
+   cursor = retailMgmt_db.get_one_retailer_details(installer_id)
+   for doc in cursor:
+       installer_list.append(doc)
+   print (installer_list)
+   installers = installer_list
+   search_results_activated_installer = True
+   return redirect(url_for('installerWrapper'))
+
+@app.route('/installer/searchbyPName', methods=['POST'])
+def searchInstallerByPName():
+   global installers
+   global search_results_activated_installer
+   installer_list = []
+   prgrmName = request.form['searchbyPName']
+   cursor = retailMgmt_db.search_installer_by_pName(prgrmName)
+   for doc in cursor:
+       installer_list.append(doc)
+   print (installer_list)
+   installers = installer_list
+   search_results_activated_installer = True
+   return redirect(url_for('installerWrapper'))
+
+
 if(__name__) == '__main__':
 	app.run(debug=True)
