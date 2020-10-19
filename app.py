@@ -29,10 +29,10 @@ def setData():
 	ProgramName = request.form['pName']
 	Account = request.form['accN']
 	Address1 = request.form['addrs']
-	City = request.form['city']
+	City = request.form['city']	
+	Country = request.form['country']
 	State =  request.form['state']
 	Zip = request.form['zCode']
-	Country = request.form['country']
 	Hire = request.form['strDate']
 	Status = request.form['status']
 
@@ -146,10 +146,6 @@ def update_oneRetailer_Records():
 def edit_record(retailer_id):
 	retailer_one_record = retailMgmt_db.get_one_retailer_details(retailer_id)
 	return render_template('edit_record.html', retailer_list = retailer_one_record)
-
-
-
-
 
 
 if(__name__) == '__main__':
